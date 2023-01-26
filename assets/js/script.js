@@ -29,6 +29,8 @@ function runGame(gameType) {
 
     if (gameType === "addition") {
         displayAdditionQuestion(num1, num2);
+    } else if (gameType === "multiply") {
+        displayMultiplyQuestion(num1, num2);
     } else {
         alert(`Unknown Game Type: ${gameType}`);
         throw `Unknown Game Type: ${gameType}. Aborting!`;
@@ -65,6 +67,8 @@ function calculateCorrectAnswer() {
 
     if (operator === "+") {
         return [operand1 + operand2, "addition"];
+    } else if (operator === "x") {
+        return [operand1 * operand2, "multiply"];
     } else {
         alert(`Unimplemnted operator ${operator}`);
         return (`Unimplemnted operator ${operator}. Aborting!`);
@@ -98,6 +102,7 @@ function displaySubtractQuestion(operand1, operand2) {
 }
 
 function displayMultiplyQuestion(operand1, operand2) {
-    
-    
+    document.getElementById('operand1').textContent = operand1;
+    document.getElementById('operand2').textContent = operand2;
+    document.getElementById('operator').textContent = "x";
 }
